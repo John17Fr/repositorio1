@@ -8,23 +8,15 @@
     }
 
     body {
-        /* min-height: 100vh;
-        width: 100%;
-        display: flex; */
         font-family: 'Advent Pro', sans-serif;
-        /* background-color:#eedfd8; */
-        /* background-image: url(bg.png); */
-        /* background-repeat: no-repeat; */
         background-size: cover;
         font-size: 1.2rem;
     }
-
+    /* =================================== FROM =================================== */
     .form{
-        /* background-color: #FF6712; */
         width: 90%;
         max-width: 900px;
         border-radius: 1em ;
-        /* padding: 3.5em 1.5em; */
         margin: auto;
         font-weight: bolder;
         border-radius: 15px;
@@ -32,7 +24,6 @@
         margin-bottom: -200px;
         margin-top: -300px;
         position: relative;
-        /* z-index: 1; */
     } 
 
     .form__container{
@@ -40,13 +31,12 @@
         display: grid;
         gap: 1em;
         grid-auto-columns: 100% ;
-        /* border: 1px solid; */
         padding: 30px 40px 80px 40px;
         background-color: white;
         border-radius: 0 0 14px 14px ;
 
     } 
-
+    /* =================================== FROM__HEADER =================================== */
     .form__header{
         display: flex;
         justify-content: space-evenly;
@@ -56,11 +46,9 @@
         border-radius: 14px 14px 0 0 ;
 
     }
-
     .header__logo{
         width: 120px;
     }
-
     .header__title{
         text-align: center;
         font-size: 1.9rem;
@@ -69,10 +57,7 @@
         color: white;
         margin-top: 50px;
     }
-    .form__input:focus{
-        border: 2px solid #FF6712 ;
-    }
-
+    /* =================================== FROM__INPUTS =================================== */
     .form__input{
         font-family: inherit;
         font-size: 1rem;
@@ -83,12 +68,16 @@
         border-radius: 0.2em;
         
     }
-
+    .form__input:focus{
+        border: 2px solid #FF6712 ;
+    }
     .form__input__message{
         resize: none;
         padding: 1.8em 1em;
         margin-bottom: 0.5em;
     }
+
+    /* =================================== FROM__CALL TO ACTION =================================== */
     .form__cta{
         display: flex;
         justify-content: space-evenly;
@@ -127,22 +116,29 @@
         cursor: pointer;
         transition: all ease 150ms;
     }
-
     .cta__back:hover{
         width: 100px;
 
     }
-
     .cta__back:active{
         transform: translateY(10px);
         box-shadow: 0px 0px 0px;
     }
 
+    /* =================================== MEDIA =================================== */
+
     @media (max-width:450px){
         .form{
-            padding: 3.5em 1em;
+            /* padding: 3.5em 1em; */
+            /* background-color: aqua; */
+            width: 100%;
+            border: none;
+        }
+        .form__header{
+            margin-top: 100px;
         }
     }
+
 </style>
 
 <body>
@@ -153,17 +149,19 @@
     </svg>
             
     <form class="form" method="POST">
-        
+            <!-- =================================== FORM__HEADER =================================== -->
             <div class="form__header">
                 <img 
-                class="header__logo"
-                src="logoWhite.png" 
-                alt="Logo Sena"
+                    class="header__logo"
+                    src="logoWhite.png" 
+                    alt="Logo Sena"
                 >
                 <h1 class="header__title">
                     ENCUESTA DE SATISFACCIÓN VISITAS TECNICAS UNIDAD DE SERVICIOS TECNOLOGICOS
                 </h1>
             </div>
+
+            <!-- =================================== FORM__INPUTS =================================== -->
 
             <div class="form__container">
             
@@ -171,31 +169,32 @@
                     Ingrese su nombre completo: 
                 </label>
                 <input 
+                    class="form__input"
                     id="name" 
                     name="name" 
                     type="text" 
-                    class="form__input"
                 >
             
                 <label for="">
                     Ficha: 
                 </label>
                 <input 
+                    class="form__input"
                     id="ficha" 
                     name="ficha" 
                     type="text" 
-                    class="form__input"
                 >
 
                 <label for="">
                     Programa: 
                 </label>
                 <input 
+                    class="form__input"
                     id="programa" 
                     name="programa" 
                     type="text" 
-                    class="form__input"
                 >
+                <!-- =================================== FORM__TEXT AREA =================================== -->
 
                 <label for="">
                     ¿Cuál es su percepción con respecto a la organización del evento?
@@ -204,8 +203,7 @@
                     class="form__input form__input__message" 
                     id="p1" name="p1" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
 
                 <label for="">
                     ¿Cuál es su percepción sobre la solución a las inquietudes expresadas por
@@ -215,8 +213,7 @@
                     class="form__input form__input__message"
                     id="p2" name="p2" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
 
                 <label for="">
                     ¿Cuál es su percepción con respecto a los temas recibidos en la
@@ -226,8 +223,7 @@
                     class="form__input form__input__message"
                     id="p3" name="p3" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
 
                 <label for="">
                     ¿Cómo es su percepción con respecto a su experiencia con los equipos
@@ -238,8 +234,7 @@
                     id="p4" 
                     name="p4" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
 
                 <label for="">
                     ¿Qué percepción tiene usted con respecto a la utilidad de los
@@ -250,8 +245,7 @@
                     id="p5" 
                     name="p5" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
 
                 <label for="">
                     ¿Qué percepción tiene usted con respecto al aporte práctico y teórico que
@@ -263,8 +257,7 @@
                     id="p6" 
                     name="p6" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
         
                 <label for="">
                     ¿Qué temas le gustaría que se dieran en la próxima capacitación?
@@ -274,8 +267,7 @@
                     id="p7" 
                     name="p7" 
                     rows="3"
-                >
-                </textarea>
+                ></textarea>
 
                 <label for="">
                     Registre acá sus comentarios y observaciones para nuestra
@@ -286,11 +278,14 @@
                     id="comentarios" 
                     name="comentarios" 
                     rows="2"
-                >
-                </textarea>
+                ></textarea>
 
+                <!-- =================================== FORM__CALL TO ACTION =================================== -->
                 <div class="form__cta">
-                    <button class="cta__back" href="../../../../encuesta/">
+                    <button 
+                        class="cta__back" 
+                        href="../../../../encuesta/"
+                    >
                         Regresar
                         <!-- Enviar -->
                     
@@ -303,9 +298,6 @@
                     >
                         Enviar
                     </button>
-
-
-                    
                 </div>
         </div>
     </form>

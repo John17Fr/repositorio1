@@ -1,0 +1,205 @@
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.form{
+    background-color: red;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 1em ;
+    padding: 3.5em 1.5em;
+    margin: auto;
+}
+.form__container{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100% ;
+}
+
+.form__title{
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 1.4em;
+}
+
+.form__input{
+    font-size: 1rem;
+    padding: 0.8em 1em ;
+    outline: none;
+    border: none;
+    border: 1px solid #bbb0b0;
+    border-radius: 0.2em;
+}
+.form__input__message{
+    resize: none;
+    padding: 1.8em 1em;
+    margin-bottom: 0.5em;
+}
+.form__cta{
+    background-color: blue;
+    color: wheat;
+    border: none;
+    font-weight: 300;
+    padding: 1em 0;
+    border-radius: 0.2em;
+    cursor: pointer;
+    width: 200;
+}
+
+</style>
+<body>
+    
+    <a href="../../../../encuesta/" class="back">REGRESAR</a>
+    
+    
+    <form class="form" method="POST">
+
+        <div class="form__container">
+
+            <!-- <fieldset> -->
+                <h1 class="form__title">
+                    Encuesta
+                </h1>
+                        
+                <label  for="">
+                    Ingrese su nombre completo: 
+                </label>
+                <input 
+                    id="name" 
+                    name="name" 
+                    type="text" 
+                    class="form__input"
+                >
+            
+                <label for="">
+                    Ficha: 
+                </label>
+                <input 
+                    id="ficha" 
+                    name="ficha" 
+                    type="text" 
+                    class="form__input"
+                >
+
+                <label for="">
+                    Programa: 
+                </label>
+                <input 
+                    id="programa" 
+                    name="programa" 
+                    type="text" 
+                    class="form__input"
+                >
+
+                <label for="">
+                    ¿Cuál es su percepción con respecto a la organización del evento?
+                </label>
+                <textarea 
+                    class="form__input form__input__message" 
+                    id="p1" name="p1" 
+                    rows="3"
+                >
+                </textarea>
+
+                <label for="">
+                    ¿Cuál es su percepción sobre la solución a las inquietudes expresadas por
+                    usted al personal de la Unidad de Servicios Tecnológicos?
+                </label>
+                <textarea 
+                    class="form__input form__input__message"
+                    id="p2" name="p2" 
+                    rows="3"
+                >
+                </textarea>
+
+                <label for="">
+                    ¿Cuál es su percepción con respecto a los temas recibidos en la
+                    visita?
+                </label>
+                <textarea 
+                    class="form__input form__input__message"
+                    id="p3" name="p3" 
+                    rows="3"
+                >
+                </textarea>
+
+                <label for="">
+                    ¿Cómo es su percepción con respecto a su experiencia con los equipos
+                    usados en la Unidad de Servicios Tecnológicos? <b> Si aplica </b>.
+                </label>
+                <textarea 
+                    class="form__input form__input__message" 
+                    id="p4" 
+                    name="p4" 
+                    rows="3"
+                >
+                </textarea>
+
+                <label for="">
+                    ¿Qué percepción tiene usted con respecto a la utilidad de los
+                    conocimientos recibidos en la Unidad de Serviciso Tecnológicos?
+                </label>
+                <textarea 
+                    class="form__input form__input__message"
+                    id="p5" 
+                    name="p5" 
+                    rows="3"
+                >
+                </textarea>
+
+                <label for="">
+                    ¿Qué percepción tiene usted con respecto al aporte práctico y teórico que
+                    esta visita técnica le brinda como buena práctica para su Ficha o Centro de
+                    Formación?
+                </label>
+                <textarea 
+                    class="form__input form__input__message"
+                    id="p6" 
+                    name="p6" 
+                    rows="3"
+                >
+                </textarea>
+        
+                <label for="">
+                    ¿Qué temas le gustaría que se dieran en la próxima capacitación?
+                </label>
+                <textarea 
+                    class="form__input form__input__message" 
+                    id="p7" 
+                    name="p7" 
+                    rows="3"
+                >
+                </textarea>
+
+                <label for="">
+                    Registre acá sus comentarios y observaciones para nuestra
+                    mejora...
+                </label>
+                <textarea 
+                    class="form__input form__input__message"
+                    id="comentarios" 
+                    name="comentarios" 
+                    rows="2"
+                >
+                </textarea>
+
+                <button 
+                    class="form__cta" 
+                    type="submit" 
+                    name="Enviar"
+                >
+                    Enviar
+                </button>
+            <!-- </fieldset> -->
+        </div>
+    </form>
+    
+</body>

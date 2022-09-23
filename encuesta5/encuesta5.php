@@ -1,31 +1,63 @@
 <?php
 define( 'SHORTINIT', true );
 require( '../../../../wp-load.php' );
-if (isset($_REQUEST['Enviar'])) {
+if (isset($_REQUEST['enviar'])) {
+      //echo $p1 =$_REQUEST['fecha1'];
 
-    // echo $fecha = $_REQUEST['fecha'];
-    // echo $hora = $_REQUEST['time'];
-    //  $ficha = $_REQUEST['ficha'];
-    //  $cantidad = $_REQUEST['cantidad'];
-      echo$p1 =$_REQUEST['p1'];
-      echo$p2 = $_REQUEST['p2'];
-      echo$estimado =$_REQUEST['estimado'];
-      echo$objetivo = $_REQUEST['objetivo'];
-     echo$name =$_REQUEST['name'];
-  echo$cedula = $_REQUEST['cedula'];
-    //
+    $wpdb->insert('encuesta_5_ss',
+    array('sesion' => $_REQUEST['sesion1'],
+    'fecha1' => $_REQUEST['fecha1']));
+}
+else if (isset($_REQUEST['enviar2'])) {
+    // echo $p1 =$_REQUEST['fecha1'];
+    // echo $p2 =$_REQUEST['fecha2'];
 
-    $wpdb->insert('encuesta4',
-    array('fecha' => $_REQUEST['fecha'],
-    'hora' => $_REQUEST['time'],
-    'ficha'=> $_REQUEST['ficha'],
-    'cantidad' => $_REQUEST['cantidad'],
-    'actividad'=> $_REQUEST['p1'],
-    'area' => $_REQUEST['p2'],
-    'estimado' => $_REQUEST['estimado'],
-    'objetivo' => $_REQUEST['objetivo'],
-    'nombre' => $_REQUEST['name'],
-    'cedula' => $_REQUEST['cedula']));
+  $wpdb->insert('encuesta_5_ss',
+  array('sesion' => $_REQUEST['sesion1'],
+  'fecha1' => $_REQUEST['fecha1'],
+  'fecha2' => $_REQUEST['fecha2']));
+}
+else if (isset($_REQUEST['enviar3'])) {
+    //echo $p1 =$_REQUEST['fecha1'];
+
+  $wpdb->insert('encuesta_5_ss',
+  array('sesion' => $_REQUEST['sesion1'],
+  'fecha1' => $_REQUEST['fecha1'],
+  'fecha2' => $_REQUEST['fecha2'],
+  'fecha3' => $_REQUEST['fecha3']));
+}
+else if (isset($_REQUEST['enviar4'])) {
+    //echo $p1 =$_REQUEST['fecha1'];
+
+    $wpdb->insert('encuesta_5_ss',
+    array('sesion' => $_REQUEST['sesion1'],
+    'fecha1' => $_REQUEST['fecha1'],
+    'fecha2' => $_REQUEST['fecha2'],
+    'fecha3' => $_REQUEST['fecha3'],
+    'fecha4' => $_REQUEST['fecha4']));
+}
+else if (isset($_REQUEST['enviar5'])) {
+    //echo $p1 =$_REQUEST['fecha1'];
+
+    $wpdb->insert('encuesta_5_ss',
+    array('sesion' => $_REQUEST['sesion1'],
+    'fecha1' => $_REQUEST['fecha1'],
+    'fecha2' => $_REQUEST['fecha2'],
+    'fecha3' => $_REQUEST['fecha3'],
+    'fecha4' => $_REQUEST['fecha4'],
+    'fecha5' => $_REQUEST['fecha5']));
+}
+else if (isset($_REQUEST['enviar6'])) {
+    //echo $p1 =$_REQUEST['fecha1'];
+
+    $wpdb->insert('encuesta_5_ss',
+    array('sesion' => $_REQUEST['sesion1'],
+    'fecha1' => $_REQUEST['fecha1'],
+    'fecha2' => $_REQUEST['fecha2'],
+    'fecha3' => $_REQUEST['fecha3'],
+    'fecha4' => $_REQUEST['fecha4'],
+    'fecha5' => $_REQUEST['fecha5'],
+    'fecha6' => $_REQUEST['fecha6']));
 }
 
 ?>
@@ -41,159 +73,237 @@ if (isset($_REQUEST['Enviar'])) {
         <div class="col-md-12">
             <div class="well well-sm">
                 <h1 style="text-align:center;">SOLICITUD DE SERVICIOS-UNIDAD DE SERVICIOS TECNOLOGICOS-CONTENIDOS DIGITALES</h1>
-                    <form action="">
                         <h2 style="text-align:center;">Por favor solicitar con una semana de anticipacion</h2>
-                        <h2>Cantidad de sesiones a realizar</h2>
-                        <label for="">A continuacion seleccione la cantidad de sesiones a realizar y realice la asignacion de fechas correspondientes a la actividad</label><br>
-
-                        <input type="radio">1 seccion <br>
-                        <input type="radio">2 seccion <br>
-                        <input type="radio">3 seccion <br>
-                        <input type="radio">4 seccion <br>
-                        <input type="radio">5 seccion <br>
-                        <input type="radio">6 seccion <br>
+                        <div class="sesion">
+                            <h2>Cantidad de sesiones a realizar</h2>
+                            <label for="">A continuacion seleccione la cantidad de sesiones a realizar y realice la asignacion de fechas correspondientes a la actividad</label><br>
+                            <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+                            <input type="radio" name="sesion" value="1">1 sesión <br>
+                            <input type="radio" name="sesion" value="2">2 sesiones <br>
+                            <input type="radio" name="sesion" value="3">3 sesiones <br>
+                            <input type="radio" name="sesion" value="4">4 sesiones <br>
+                            <input type="radio" name="sesion" value="5">5 sesiones <br>
+                            <input type="radio" name="sesion" value="6">6 sesiones <br>
+                        </div>
                         
-                        <h2>Una sesion</h2>
+                        <div id="sesion1" style="margin-top:3%;">
+                            <h4>Una sesión</h4>
 
-                        A continuacion se mencionan las actividades que ofrece contenidos Digitales
+                            A continuacion se mencionan las actividades que ofrece contenidos Digitales
 
-                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                                Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                                Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                            </p>
+                            <form method="POST">
+                                <h5>2. Fecha de la actividad</h5>
+                                <input type="date" name="fecha1" required><br>
+                                <input type="hidden" name="sesion1" value="1">
+                                <div class="btn" style="margin-top:5%;">
+                                    <button type="submit" name="enviar">Agendar</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div id="sesion2" style="margin-top:3%;">
+                            <h4>Dos sesiones</h4>
+
+                            <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+
+                            <p>Mocap: miercoles de 8:00 a 1:00pm <br>
                             Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
                             Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                            </p>
+                            <form method="POST">
+                            <input type="hidden" name="sesion1" value="2">
+                                <h5>3. Primera fecha de la actividad</h5>
+                                <input type="date" name="fecha1" required>
+                                <h5>4. Primera fecha de la actividad</h5>
+                                <input type="date" name="fecha2" required>
+                                <br>
+                                <div class="btn" style="margin-top:5%;">
+                                    <button type="submit" name="enviar2">Agendar</button>
+                                </div>
+                            </form>
 
-                        </p>
+                        </div>
+                        
+                        <div id="sesion3" style="margin-top:3%;">
+                            <h4>Tres sesiones</h4>
+                            <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+                            <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                                Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                                Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                            </p>
+                            <form method="POST">
+                            <input type="hidden" name="sesion1" value="3">
+                                <h5>5. Primera fecha de la actividad</h5>
+                                <input type="date" name="fecha1" required>
+                                <h5>6. segunda fecha de la actividad</h5>
+                                <input type="date" name="fecha2" required>
+                                <h5>7. Tercera fecha de la actividad</h5>
+                                <input type="date" name="fecha3" required>
+                                <br>
+                                <div class="btn" style="margin-top:5%;">
+                                    <button type="submit" name="enviar3">Agendar</button>
+                                </div>
+                            </form>
+                        </div>
+                         
+                        <div id="sesion4" style="margin-top:3%;">
+                            <h4>Cuatro sesiones</h4>
+                            <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
 
-                        <h2>2. Fecha de la actividad</h2>
+                            <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                                Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                                Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                            </p>
+                            <form method="POST">
+                            <input type="hidden" name="sesion1" value="4">
+                                <h5>8. Primera fecha de la actividad</h5>
+                                <input type="date" name="fecha1" required>
+                                <h5>9. segunda fecha de la actividad</h5>
+                                <input type="date" name="fecha2" required>
+                                <h5>10. Tercera fecha de la actividad</h5>
+                                <input type="date" name="fecha3" required>
+                                <h5>11. Cuarta fecha de la actividad</h5>
+                                <input type="date" name="fecha4" required>
+                                <br>
+                                <div class="btn" style="margin-top:5%;">
+                                    <button type="submit" name="enviar4">Agendar</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div id="sesion5" style="margin-top:3%;">
+                            <h4>Cinco sesiones</h4>
+                            <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
 
-                        <input type="date" value="">
+                            <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                                Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                                Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                            </p>
+                            <form method="POST">
+                            <input type="hidden" name="sesion1" value="5">
+                                <h5>12. Primera fecha de la actividad</h5>
+                                <input type="date" name="fecha1" required>
+                                <h5>13. segunda fecha de la actividad</h5>
+                                <input type="date" name="fecha2" required>
+                                <h5>14. Tercera fecha de la actividad</h5>
+                                <input type="date" name="fecha3" required>
+                                <h5>15. Cuarta fecha de la actividad</h5>
+                                <input type="date" name="fecha4" required>
+                                <h5>16. Quinta fecha de la actividad</h5>
+                                <input type="date" name="fecha5" required><br>
+                                <div class="btn" style="margin-top:5%;">
+                                    <button type="submit" name="enviar5">Agendar</button>
+                                </div>
 
-                        <h2>Dos sesiones</h2>
+                            </form>
+                        </div>
+                        
+                        <div id="sesion6" style="margin-top:3%;">
+                            <h4>Seis sesiones</h4>
 
-                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+                            <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
 
-                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
-                        Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
-                        Fotogrametria: viernes de 8:00 am. a 1:00 pm.
-                        </p>
-
-                        <h2>3. Primera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>4. Primera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>Tres sesiones</h2>
-
-                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-
-                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
-                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
-                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
-                        </p>
-
-                        <h2>5. Primera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>6. segunda fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>7. Tercera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>Cuatro sesiones</h2>
-
-                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-
-                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
-                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
-                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
-                        </p>
-
-                        <h2>8. Primera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>9. segunda fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>10. Tercera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>11. Cuarta fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>Cinco sesiones</h2>
-
-                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-
-                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
-                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
-                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
-                        </p>
-
-                        <h2>12. Primera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>13. segunda fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>14. Tercera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>15. Cuarta fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>16. Quinta fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>Seis sesiones</h2>
-
-                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-
-                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
-                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
-                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
-                        </p>
-
-                        <h2>17. Primera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>18. segunda fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>19. Tercera fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>20. Cuarta fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>21. Quinta fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                        <h2>22. Sexta fecha de la actividad</h2>
-
-                        <input type="date" value="">
-
-                    </form>
+                            <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                                Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                                Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                            </p>
+                            <form method="POST">
+                            <input type="hidden" name="sesion1" value="6">
+                                <h5>17. Primera fecha de la actividad</h5>
+                                <input type="date" name="fecha1" required>
+                                <h5>18. segunda fecha de la actividad</h5>
+                                <input type="date" name="fecha2" required>
+                                <h5>19. Tercera fecha de la actividad</h5>
+                                <input type="date" name="fecha3" required>
+                                <h5>20. Cuarta fecha de la actividad</h5>
+                                <input type="date" name="fecha4" required>
+                                <h5>21. Quinta fecha de la actividad</h5>
+                                <input type="date" name="fecha5" required>
+                                <h5>22. Sexta fecha de la actividad</h5>
+                                <input type="date" name="fecha6" required>
+                                <br>
+                                <div class="btn" style="margin-top:5%;">
+                                    <button type="submit" name="enviar6">Agendar</button>
+                                </div>
+                            </form>
+                        </div>
+                        <br><br><br>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+                    $("#sesion1").hide();
+                    $("#sesion2").hide();
+                    $("#sesion3").hide();
+                    $("#sesion4").hide();
+                    $("#sesion5").hide();
+                    $("#sesion6").hide();
+            $("input[type=radio]").click(function(event){
+                var valor = 0;
+                var valor = $(event.target).val();
+                if(valor =="1"){
+                    $("#sesion1").show();
+                    $("#sesion2").hide();
+                    $("#sesion3").hide();
+                    $("#sesion4").hide();
+                    $("#sesion5").hide();
+                    $("#sesion6").hide();
+                } else if (valor == "2") {
+                    $("#sesion1").hide();
+                    $("#sesion2").show();
+                    $("#sesion3").hide();
+                    $("#sesion4").hide();
+                    $("#sesion5").hide();
+                    $("#sesion6").hide();
+                } else if (valor == "3") { 
+                    // Otra cosa
+                    $("#sesion1").hide();
+                    $("#sesion2").hide();
+                    $("#sesion3").show();
+                    $("#sesion4").hide();
+                    $("#sesion5").hide();
+                    $("#sesion6").hide();
+                }else if (valor == "4") { 
+                    // Otra cosa
+                    $("#sesion1").hide();
+                    $("#sesion2").hide();
+                    $("#sesion3").hide();
+                    $("#sesion4").show();
+                    $("#sesion5").hide();
+                    $("#sesion6").hide();
+                }else if (valor == "5") { 
+                    // Otra cosa
+                    $("#sesion1").hide();
+                    $("#sesion2").hide();
+                    $("#sesion3").hide();
+                    $("#sesion4").hide();
+                    $("#sesion5").show();
+                    $("#sesion6").hide();
+                }else if(valor == "6"){
+                    //otra cosa
+                    $("#sesion1").hide();
+                    $("#sesion2").hide();
+                    $("#sesion3").hide();
+                    $("#sesion4").hide();
+                    $("#sesion5").hide();
+                    $("#sesion6").show();
+                }
+                else{
+                    $("#sesion1").hide();
+                    $("#sesion2").hide();
+                    $("#sesion3").hide();
+                    $("#sesion4").hide();
+                    $("#sesion5").hide();
+                    $("#sesion6").hide();
+                }
+            });
+        });  
+
+
+</script>

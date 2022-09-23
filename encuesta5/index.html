@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;700&family=Montserrat:wght@300;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+    
+        }
+    
+        body {
+            font-family: 'Advent Pro', sans-serif;
+            background-size: cover;
+            font-size: 1.2rem;
+        }
+    
+        span {
+            margin: 5px 0 10px 0;
+        }
+    
+        /* =================================== FORM =================================== */
+        .form {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 1em;
+            margin: auto;
+            font-weight: bolder;
+            border-radius: 15px;
+            border: 2px solid #7e7b7b;
+            margin-bottom: -200px;
+            margin-top: -300px;
+            position: relative;
+        }
+    
+        .form__container {
+            width: 100%;
+            display: grid;
+            gap: 1em;
+            grid-auto-columns: 100%;
+            padding: 30px 40px 80px 40px;
+            background-color: white;
+            border-radius: 0 0 14px 14px;
+    
+        }
+    
+        /* =================================== FORM__HEADER =================================== */
+        .form__header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #FF6712;
+            padding: 50px;
+            border-radius: 14px 14px 0 0;
+    
+        }
+    
+        .header__logo {
+            width: 120px;
+        }
+    
+        .header__title {
+            text-align: center;
+            font-size: 1.9rem;
+            margin-bottom: 1.4em;
+            width: max-content;
+            color: white;
+            margin-top: 50px;
+        }
+    
+        /* =================================== FROM__INPUTS =================================== */
+        .form__input {
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0.8em 1em;
+            outline: none;
+            border: none;
+            border: 1px solid #bbb0b0;
+            border-radius: 0.2em;
+    
+        }
+    
+        .form__input:focus {
+            border: 2px solid #FF6712;
+        }
+    
+        .form__input__radio {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .form__input__radio label {
+            color: #000000;
+            padding: 5px 15px 5px 51px;
+            display: inline-block;
+            position: relative;
+            font-size: 1em;
+            border-radius: 3px;
+            cursor: pointer;
+            -webkit-transition: all, 0.3s, ease;
+            -o-transition: all, 0.3s, ease;
+            transition: all, 0.3s, ease;
+        }
+    
+        .form__input__radio label:hover {
+            background: rgba(0, 0, 0, 0.200);
+            width: 10%;
+        }
+    
+        .form__input__radio label:before {
+            content: "";
+            width: 17px;
+            height: 17px;
+            background: none;
+            display: inline-block;
+            background: none;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            position: absolute;
+            left: 8px;
+            top: 4px;
+        }
+    
+        .form__input__radio input[type="radio"] {
+            display: none;
+        }
+    
+        .form__input__radio input[type="radio"]:checked+label:before {
+            background-color: #FF6712;
+        }
+    
+        /* =================================== FROM__CALL TO ACTION =================================== */
+        .form__cta {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    
+        .cta__send {
+            font-weight: bolder;
+            font-size: 1rem;
+            height: 50px;
+            width: 90px;
+            background-color: #FF6712;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all ease 150ms;
+        }
+    
+        .cta__send:hover {
+            /* background-color: #ca5b1b; */
+            width: 100px;
+        }
+    
+        .cta__send:active {
+            transform: translateY(10px);
+            box-shadow: 0px 0px 0px;
+        }
+    
+        .cta__back {
+            font-weight: bolder;
+            font-size: 1.3rem;
+            height: 50px;
+            width: 90px;
+            background-color: #FF6712;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all ease 150ms;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 12px;
+    
+        }
+    
+        .cta__back:hover {
+            width: 100px;
+    
+        }
+    
+        .cta__back:active {
+            transform: translateY(10px);
+            box-shadow: 0px 0px 0px;
+        }
+    
+        /* =================================== MEDIA =================================== */
+    
+        @media (max-width:450px) {
+            .form {
+                /* padding: 3.5em 1em; */
+                /* background-color: aqua; */
+                width: 100%;
+                border: none;
+            }
+    
+            .form__header {
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <h1 style="text-align:center;">SOLICITUD DE SERVICIOS-UNIDAD DE SERVICIOS TECNOLOGICOS-CONTENIDOS
+                        DIGITALES</h1>
+                    <form action="">
+                        <h2 style="text-align:center;">Por favor solicitar con una semana de anticipacion</h2>
+                        <h2>Cantidad de sesiones a realizar</h2>
+                        <label for="">A continuacion seleccione la cantidad de sesiones a realizar y realice la asignacion
+                            de fechas correspondientes a la actividad</label><br>
+    
+                        <input type="radio">1 seccion <br>
+                        <input type="radio">2 seccion <br>
+                        <input type="radio">3 seccion <br>
+                        <input type="radio">4 seccion <br>
+                        <input type="radio">5 seccion <br>
+                        <input type="radio">6 seccion <br>
+    
+                        <h2>Una sesion</h2>
+    
+                        A continuacion se mencionan las actividades que ofrece contenidos Digitales
+    
+                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+    
+                        </p>
+    
+                        <h2>2. Fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>Dos sesiones</h2>
+    
+                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+    
+                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                        </p>
+    
+                        <h2>3. Primera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>4. Primera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>Tres sesiones</h2>
+    
+                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+    
+                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                        </p>
+    
+                        <h2>5. Primera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>6. segunda fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>7. Tercera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>Cuatro sesiones</h2>
+    
+                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+    
+                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                        </p>
+    
+                        <h2>8. Primera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>9. segunda fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>10. Tercera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>11. Cuarta fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>Cinco sesiones</h2>
+    
+                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+    
+                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                        </p>
+    
+                        <h2>12. Primera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>13. segunda fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>14. Tercera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>15. Cuarta fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>16. Quinta fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>Seis sesiones</h2>
+    
+                        <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+    
+                        <p>Mocap: miercoles de 8:00 a 1:00pm <br>
+                            Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm <br>
+                            Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                        </p>
+    
+                        <h2>17. Primera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>18. segunda fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>19. Tercera fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>20. Cuarta fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>21. Quinta fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                        <h2>22. Sexta fecha de la actividad</h2>
+    
+                        <input type="date" value="">
+    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

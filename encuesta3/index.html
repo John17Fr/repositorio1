@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;700&family=Montserrat:wght@300;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+    
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+    
+        body {
+            font-family: 'Advent Pro', sans-serif;
+            background-size: cover;
+            font-size: 1.2rem;
+        }
+        /* =================================== FROM =================================== */
+        .form{
+            width: 90%;
+            max-width: 900px;
+            border-radius: 1em ;
+            margin: auto;
+            font-weight: bolder;
+            border-radius: 15px;
+            border: 2px solid #7e7b7b;
+            margin-bottom: -200px;
+            margin-top: -300px;
+            position: relative;
+        } 
+    
+        .form__container{
+            width: 100%;
+            display: grid;
+            gap: 1em;
+            grid-auto-columns: 100% ;
+            padding: 30px 40px 80px 40px;
+            background-color: white;
+            border-radius: 0 0 14px 14px ;
+    
+        } 
+        /* =================================== FROM__HEADER =================================== */
+        .form__header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #FF6712;
+            padding: 50px;
+            border-radius: 14px 14px 0 0 ;
+    
+        }
+        .header__logo{
+            width: 120px;
+        }
+        .header__title{
+            text-align: center;
+            font-size: 1.9rem;
+            margin-bottom: 1.4em;
+            width: max-content;
+            color: white;
+            margin-top: 50px;
+        }
+        /* =================================== FROM__INPUTS =================================== */
+        .form__input{
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0.8em 1em ;
+            outline: none;
+            border: none;
+            border: 1px solid #bbb0b0;
+            border-radius: 0.2em;
+            
+        }
+        .form__input:focus{
+            border: 2px solid #FF6712 ;
+        }
+        .form__input__radio{
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .form__input__radio label{
+            font-size: 1em;
+            color: #000000;
+            padding: 5px 15px 5px 51px;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            -webkit-transition:all,0.3s,ease ;
+            -o-transition:all,0.3s,ease ;
+            transition: all,0.3s,ease;
+        }
+    
+        .form__input__radio label:hover{
+            background: rgba(0, 0, 0, 0.200);
+            width: 10%;
+        }
+    
+        .form__input__radio label:before{
+            content: "";
+            width: 17px;
+            height: 17px;
+            background: none;
+            display: inline-block;
+            background: none;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            position: absolute;
+            left: 8px;
+            top: 4px;
+        }
+    
+        .form__input__radio input[type="radio"]{
+            display: none;
+        }
+    
+        .form__input__radio input[type="radio"]:checked + label:before{
+            background-color: #FF6712;
+        }
+        .form__input__message{
+            resize: none;
+            padding: 1.8em 1em;
+            margin-bottom: 0.5em;
+        }
+    
+        /* =================================== FROM__CALL TO ACTION =================================== */
+        .form__cta{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .cta__send {
+            font-weight: bolder;
+            font-size: 1rem;
+            height: 50px;
+            width: 90px;
+            background-color: #FF6712;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all ease 150ms;
+        }
+        
+        .cta__send:hover {
+            /* background-color: #ca5b1b; */
+            width: 100px;
+        }
+    
+        .cta__send:active {
+            transform: translateY(10px);
+            box-shadow: 0px 0px 0px;
+        }
+    
+        .cta__back{
+            height: 50px;
+            width: 90px;
+            background-color: #FF6712;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all ease 150ms;
+            text-align: center;
+            font-size: 1.3rem;
+            padding-top: 12px;
+            text-decoration-color: bold;
+            text-decoration: none;
+        }
+    
+        .cta__back:hover{
+            width: 100px;
+    
+        }
+        .cta__back:active{
+            transform: translateY(10px);
+            box-shadow: 0px 0px 0px;
+        }
+    
+        /* =================================== MEDIA =================================== */
+    
+        @media (max-width:450px){
+            .form{
+                /* padding: 3.5em 1em; */
+                /* background-color: aqua; */
+                width: 100%;
+                border: none;
+            }
+            .form__header{
+                margin-top: 100px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1430 320">
+        <path fill="#F2A88D" fill-opacity="1"
+            d="M0,64L60,64C120,64,240,64,360,85.3C480,107,600,149,720,186.7C840,224,960,256,1080,245.3C1200,235,1320,181,1380,154.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+    </svg>
+
+    <form class="form" method="POST">
+
+        <div class="form__header">
+            <img 
+                class="header__logo"
+                src="logoWhite.png" 
+                alt="Logo Sena"
+            >
+            <h1 class="header__title">
+                PERCEPCIÓN Y SATISFACCIÓN DEL CLIENTE
+            </h1>
+        </div>
+
+        <div class="form__container">
+
+            <label for="">Fecha: </label>
+            <input id="fecha" name="fecha" type="date" class="form__input" value="<?php echo $hoy; ?>" disabled>
+
+            <label for="">Nombre del cliente: </label>
+            <input id="name" name="name" type="text" class="form__input">
+
+            <label for="">Correo electronico: </label>
+            <input id="correo" name="correo" type="text" class="form__input">
+
+            <label for="">Proyecto: </label>
+            <input id="proyecto" name="proyecto" type="text" class="form__input">
+
+            <div class="form__input__radio">
+            
+                <span for="">5.¿Cuál es su percepción con respecto a la atención recibida por el personal de la unidad de servicios tecnologicos? </span>
+
+                <input type="radio" name="p1" id="p1" value="1">
+                <label for="p1">1</label>
+
+                <input class="form__input" type="radio" name="p1" id="p2" value="2">
+                <label  for="p2">2</label>
+
+                <input class="form__input" type="radio" name="p1" id="p3" value="3">
+                <label  for="p3">3</label>
+
+                <input class="form__input" type="radio" name="p1" id="p4" value="4">
+                <label  for="p4">4</label>
+
+                <input class="form__input" type="radio" name="p1" id="p5" value="5">
+                <label  for="p5">5</label>
+            </div>
+
+            <label for="">Observaciones para nuestra mejora...</label>
+            <textarea class="form__input__message" id="comentario_p1" name="comentario_p1" rows="2"></textarea>
+
+            <div class="form__input__radio">
+
+                <span for="">6.¿Cuál es su percepción sobre la solución a las inquietudes expresadas por usted al equipo de trabajo de la Unidad de servicios Tecnologicos durante la presentación de servicios?</span>
+
+                <input  type="radio" name="p2" id="p6" value="1">
+                <label  for="p6">1</label>
+
+                <input  type="radio" name="p2" id="p7" value="2">
+                <label  for="p7">2</label>
+
+                <input  type="radio" name="p2" id="p8" value="3">
+                <label  for="p8">3</label>
+
+                <input  type="radio" name="p2" id="p9" value="4">
+                <label  for="p9">4</label>
+
+                <input  type="radio" name="p2" id="p10" value="5">
+                <label  for="p10">5</label>
+
+            </div>
+
+            <span for="">Observaciones para nuestra mejora...</span>
+
+            <textarea class="form__input__message" id="comentario_p2" name="comentario_p2" rows="2"></textarea>
+
+            <div class="form__input__radio">
+            
+                <span for="">7.¿Cuál es su percepción con respecto a los tiempos de respuesta del equipo de trabajo de la Unidad de Servicios tecnologicos?</span>
+
+                <input type="radio" name="p1" id="p11" value="1">
+                <label for="p11">1</label>
+
+                <input class="form__input" type="radio" name="p1" id="p12" value="2">
+                <label  for="p12">2</label>
+
+                <input class="form__input" type="radio" name="p1" id="p13" value="3">
+                <label  for="p13">3</label>
+
+                <input class="form__input" type="radio" name="p1" id="p14" value="4">
+                <label  for="p14">4</label>
+
+                <input class="form__input" type="radio" name="p1" id="p15" value="5">
+                <label  for="p15">5</label>
+            </div>
+
+            <label for="">Observaciones para nuestra mejora...</label>
+            <textarea class="form__input__message" id="comentario_p3" name="comentario_p3" rows="2"></textarea>
+
+            <div class="form__input__radio">
+            
+                <span for="">8.¿Cómo es su percepción con respecto al cumplimiento de los requerimientos iniciales del proyecto?</span>
+
+                <input type="radio" name="p1" id="p16" value="1">
+                <label for="p16">1</label>
+
+                <input class="form__input" type="radio" name="p1" id="p17" value="2">
+                <label  for="p17">2</label>
+
+                <input class="form__input" type="radio" name="p1" id="p18" value="3">
+                <label  for="p18">3</label>
+
+                <input class="form__input" type="radio" name="p1" id="p19" value="4">
+                <label  for="p19">4</label>
+
+                <input class="form__input" type="radio" name="p1" id="p20" value="5">
+                <label  for="p120">5</label>
+            </div>
+
+            <label for="">Observaciones para nuestra mejora...</label>
+            <textarea class="form__input__message" id="comentario_p4" name="comentario_p4" rows="2"></textarea>
+
+
+
+
+            <div class="form__input__radio">
+
+            <span for="">9.¿Cuál es su percepción con respecto a la comunicación de la unidad de servicios Tecnologicos durante y despues de la presentación del servicio ?</span>
+
+
+                <input type="radio" name="p5" id="p21" value="1">
+                <label for="p21">1</label>
+
+                <input type="radio" name="p5" id="p22" value="2">
+                <label for="p22">2</label>
+
+                <input type="radio" name="p5" id="p23" value="3">
+                <label for="p23">3</label>
+
+                <input type="radio" name="p5" id="p24" value="4">
+                <label for="p24">4</label>
+
+                <input type="radio" name="p5" id="p25" value="5">
+                <label for="p25">5</label>
+        
+           </div>
+
+
+
+
+
+            <span for="">Observaciones para nuestra mejora...</span>
+            <textarea class="form__input__message" id="comentario_p5" name="comentario_p5" rows="2"></textarea>
+
+
+
+
+            <div class="form__input__radio">
+            <span for="">10.¿Qué percepción tiene usted con respecto al valor asignado al costo del proyecto?</span>
+
+
+                <input type="radio" name="p6" id="p26" value="1">
+                <label for="p26">1</label>
+
+                <input type="radio" name="p6" id="p27" value="2">
+                <label for="p27">2</label>
+
+                <input type="radio" name="p6" id="p28" value="3">
+                <label for="p28">3</label>
+
+                <input type="radio" name="p6" id="p29" value="4">
+                <label for="p29">4</label>
+           
+                <input type="radio" name="p6" id="p30" value="5">
+                <label for="p30">5</label>
+            
+            </div>
+
+
+
+
+
+            <span for="">Observaciones para nuestra mejora...</span>
+            <textarea class="form__input__message" id="comentario_p6" name="comentario_p6" rows="2"></textarea>
+
+
+
+
+            <div class="form__input__radio">
+            <span for="">11.¿Qué percepción tiene usted con respecto al soporte una vez recibido el proyecto?</span>
+
+
+                <input type="radio" name="p7" id="p31" value="1">
+                <label for="p31">1</label>
+
+                <input type="radio" name="p7" id="p32" value="2">
+                <label for="p32">2</label>
+
+                <input type="radio" name="p7" id="p33" value="3">
+                <label for="p33">3</label>
+
+                <input type="radio" name="p7" id="p34" value="4">
+                <label for="p34">4</label>
+
+                <input type="radio" name="p7" id="35" value="5">
+                <label for="p35">5</label>
+
+            </div>
+
+
+
+
+
+            <span for="">Observaciones para nuestra mejora...</span>
+            <textarea class="form__input__message" id="comentario_p7" name="comentario_p7" rows="2"></textarea>
+
+
+
+
+
+            <span for="">12. Exprese libremente sus comentarios sobre el servicio recibido</span>
+            <textarea class="form__input__message" id="comentarios" name="comentarios" rows="2"></textarea>
+                                
+                            
+
+                            
+            <div class="form__cta">
+
+                <a class="cta__back" href="../../../../encuesta/">
+                    Regresar
+                </a>
+                
+                <button  type="submit" class="cta__send" name="Enviar">
+                    Enviar
+                </button>
+
+            </div>
+        </div>            
+    </form>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#F2A88D" fill-opacity="1"
+            d="M0,64L60,64C120,64,240,64,360,85.3C480,107,600,149,720,186.7C840,224,960,256,1080,245.3C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+        </path>
+    </svg>          
+</body>
+</html>

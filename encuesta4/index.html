@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;700&family=Montserrat:wght@300;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+    
+        }
+    
+        body {
+            font-family: 'Advent Pro', sans-serif;
+            background-size: cover;
+            font-size: 1.2rem;
+        }
+        
+        span{
+            margin: 5px 0 10px 0;
+        }
+        /* =================================== FORM =================================== */
+        .form {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 1em;
+            margin: auto;
+            font-weight: bolder;
+            border-radius: 15px;
+            border: 2px solid #7e7b7b;
+            margin-bottom: -200px;
+            margin-top: -300px;
+            position: relative;
+        }
+    
+        .form__container {
+            width: 100%;
+            display: grid;
+            gap: 1em;
+            grid-auto-columns: 100%;
+            padding: 30px 40px 80px 40px;
+            background-color: white;
+            border-radius: 0 0 14px 14px;
+    
+        }
+    
+        /* =================================== FORM__HEADER =================================== */
+        .form__header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #FF6712;
+            padding: 50px;
+            border-radius: 14px 14px 0 0;
+    
+        }
+    
+        .header__logo {
+            width: 120px;
+        }
+    
+        .header__title {
+            text-align: center;
+            font-size: 1.9rem;
+            margin-bottom: 1.4em;
+            width: max-content;
+            color: white;
+            margin-top: 50px;
+        }
+    
+        /* =================================== FROM__INPUTS =================================== */
+        .form__input {
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0.8em 1em;
+            outline: none;
+            border: none;
+            border: 1px solid #bbb0b0;
+            border-radius: 0.2em;
+    
+        }
+    
+        .form__input:focus {
+            border: 2px solid #FF6712;
+        }
+
+        .form__input__radio{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form__input__radio label{
+            color: #000000;
+            padding: 5px 15px 5px 51px;
+            display: inline-block;
+            position: relative;
+            font-size: 1em;
+            border-radius: 3px;
+            cursor: pointer;
+            -webkit-transition:all,0.3s,ease ;
+            -o-transition:all,0.3s,ease ;
+            transition: all,0.3s,ease;
+        }
+
+        .form__input__radio label:hover{
+            background: rgba(0, 0, 0, 0.200);
+            width: 10%;
+        }
+
+        .form__input__radio label:before{
+            content: "";
+            width: 17px;
+            height: 17px;
+            background: none;
+            display: inline-block;
+            background: none;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            position: absolute;
+            left: 8px;
+            top: 4px;
+        }
+
+        .form__input__radio input[type="radio"]{
+            display: none;
+        }
+
+        .form__input__radio input[type="radio"]:checked + label:before{
+            background-color: #FF6712;
+        }
+
+        /* =================================== FROM__CALL TO ACTION =================================== */
+        .form__cta {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    
+        .cta__send {
+            font-weight: bolder;
+            font-size: 1rem;
+            height: 50px;
+            width: 90px;
+            background-color: #FF6712;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all ease 150ms;
+        }
+    
+        .cta__send:hover {
+            /* background-color: #ca5b1b; */
+            width: 100px;
+        }
+    
+        .cta__send:active {
+            transform: translateY(10px);
+            box-shadow: 0px 0px 0px;
+        }
+    
+        .cta__back {
+            font-weight: bolder;
+            font-size: 1.3rem;
+            height: 50px;
+            width: 90px;
+            padding: 12px;
+            background-color: #FF6712;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all ease 150ms;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .cta__back:hover {
+            width: 100px;
+    
+        }
+    
+        .cta__back:active {
+            transform: translateY(10px);
+            box-shadow: 0px 0px 0px;
+        }
+    
+        /* =================================== MEDIA =================================== */
+    
+        @media (max-width:450px) {
+            .form {
+                /* padding: 3.5em 1em; */
+                /* background-color: aqua; */
+                width: 100%;
+                border: none;
+            }
+    
+            .form__header {
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1430 320">
+        <path fill="#F2A88D" fill-opacity="1"
+            d="M0,64L60,64C120,64,240,64,360,85.3C480,107,600,149,720,186.7C840,224,960,256,1080,245.3C1200,235,1320,181,1380,154.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+    </svg>
+
+    <form class="form" method="POST">
+
+        <!-- =================================== FORM__HEADER =================================== -->
+        <div class="form__header">
+            <img class="header__logo" src="logoWhite.png" alt="Logo Sena">
+            <h1 class="header__title">
+                PERCEPCIÓN Y SATISFACCIÓN DEL CLIENTE
+            </h1>
+        </div>
+        <!-- =================================== FORM__INPUTS =================================== -->
+        <div class="form__container">
+
+            <label for="">
+                Fecha de la actividad: 
+            </label>
+            <input 
+                class="form__input"
+                id="fecha" 
+                name="fecha" 
+                type="date" 
+            >
+
+            <label for="">
+                Hora de la activiadad: 
+            </label>
+            <input 
+                class="form__input"
+                id="time" 
+                name="time" 
+                type="time" 
+            >
+
+            <label for="">
+                Ficha: 
+            </label>
+            <input 
+                class="form__input"
+                id="ficha" 
+                name="ficha" 
+                type="text" 
+            >
+
+            <label for="">
+                Cantidad de aprendices: 
+            </label>
+            <input 
+                class="form__input"
+                id="cantidad" 
+                name="cantidad" 
+                type="text" 
+            >
+            <div class="form__input__radio">
+
+                <span>
+                    5.¿Tipo de actividad a realizar?
+                </span>
+
+                <input  id="p1" name="p1" type="radio" value="1">
+                <label class="form-check-label" for="p1">
+                    1
+                </label>
+
+                <input  id="p2" name="p1" type="radio" value="2">
+                <label class="form-check-label" for="p2">
+                    2
+                </label>
+
+                <input id="p3" name="p1" type="radio" value="3">
+                <label class="form-check-label" for="p3">
+                    3
+                </label>
+
+                <input  id="p4" name="p1" type="radio" value="4">
+                <label  for="p4">
+                    4
+                </label>
+
+                <span>
+                    6.¿Area de actividad?
+                </span>
+
+                <input  id="p5" name="p2" type="radio" value="1">
+                <label  for="p5">
+                    1
+                </label>
+
+                <input  id="p6" name="p2" type="radio" value="2">
+                <label  for="p6">
+                    2
+                </label>
+
+            </div>
+            
+
+            <label for="">
+                7.¿Tiempo estimado de la actividad?
+            </label>
+            <input 
+                class="form__input"
+                id="estimado" 
+                name="estimado" 
+                type="text" 
+            >
+
+            <label for="">
+                8.¿Objetivo de la actividad a realizar?
+            </label>
+            <input 
+                class="form__input"
+                id="objetivo" 
+                name="objetivo" 
+                type="text" 
+            >
+
+            <label for="">
+                9.¿Nombre del instructor sena?
+            </label>
+            <input 
+                class="form__input"
+                id="name" 
+                name="name" 
+                type="text" 
+            >
+
+            <label for="">
+                9.¿Cedula del instructor sena?
+            </label>
+            <input 
+                class="form__input"
+                id="cedula" 
+                name="cedula" 
+                type="text" 
+            >
+
+            <div class="form__cta">
+
+                <a class="cta__back" href="../../../../encuesta/">
+                    Regresar
+                </a>
+                
+                <button class="cta__send" type="submit" name="Enviar">
+                    Enviar
+                </button>
+
+            </div>
+
+
+
+        </div>
+    </form>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#F2A88D" fill-opacity="1"
+            d="M0,64L60,64C120,64,240,64,360,85.3C480,107,600,149,720,186.7C840,224,960,256,1080,245.3C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+        </path>
+    </svg>
+</body>
+</html>

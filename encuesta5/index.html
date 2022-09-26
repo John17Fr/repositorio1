@@ -30,7 +30,8 @@
             margin: 0 auto;
         }
         p{
-            font-weight: normal;
+            font-weight: bolder;
+            font-size: 1.38rem;
         }
         ul{
             position: relative;
@@ -38,6 +39,9 @@
         }
         span{
             font-size: 1.38rem;
+        }
+        input{
+            font-size: 1rem ;
         }
         /* =================================== FROM =================================== */
         .form {
@@ -124,6 +128,7 @@
         .form__input__radio {
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
     
         .form__input__radio label {
@@ -172,14 +177,21 @@
             margin-bottom: 0.5em;
         }
     
-        /* =================================== FROM__CALL TO ACTION =================================== */
+        /* =================================== FORM__CALL TO ACTION =================================== */
         .form__cta {
             display: flex;
-            justify-content: space-evenly;
-            margin-top: 100px;
-            margin-bottom: 50px;
+            justify-content: end;
+            margin-top: 20px;
+            margin-right: 50px;
+            /* margin-bottom: 10px; */
         }
-    
+
+        .form__cta__agendar{
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
         .cta__send {
             /* font-weight: bolder; */
             font-size: 1rem;
@@ -193,7 +205,6 @@
             cursor: pointer;
             transition: all ease 150ms;
         }
-    
         .cta__send:hover {
             /* background-color: #ca5b1b; */
             width: 100px;
@@ -203,10 +214,9 @@
             transform: translateY(10px);
             box-shadow: 0px 0px 0px;
         }
-    
         .cta__back {
             height: 50px;
-            width: 90px;
+            width: 150px;
             background-color: #FF6712;
             box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.623);
             color: white;
@@ -221,7 +231,7 @@
         }
     
         .cta__back:hover {
-            width: 100px;
+            width: 160px;
     
         }
     
@@ -260,10 +270,19 @@
         <div class="form__header">
 
             <img class="header__logo" src="logoWhite.png" alt="Logo Sena">
+
             <h1 class="header__title">
                 SOLICITUD DE SERVICIOS-UNIDAD DE SERVICIOS TECNOLOGICOS-CONTENIDOS DIGITALES
             </h1>
 
+        </div>
+
+        <div class="form__cta">
+            
+            <a class="cta__back" href="../../../../encuesta/">
+                Regresar
+                <!-- Enviar -->
+            </a>
         </div>
 
         <div class="form__container">
@@ -276,10 +295,9 @@
             
             <div class="sesion form__input__radio">
             
-                <span>
-                    A continuacion seleccione la cantidad de sesiones a realizar y realice la asignacion
-                    de fechas correspondientes a la actividad
-                </span>
+                <p>
+                    A continuacion seleccione la cantidad de sesiones a realizar y realice la asignacion de fechas correspondientes a la actividad.
+                </p>
             
                 <input 
                     id="p1"
@@ -360,15 +378,34 @@
                 </ul>
             
                 <form method="POST" class="form__input__">
+
                     <p>
                         Fecha de la actividad
                     </p>
-                    <input type="date" name="fecha1" required>
-                    <input type="hidden" name="sesion1" value="1">
-                    <div class="btn" style="margin-top:5%;">
-                        <button type="submit" name="enviar">Agendar</button>
+                    <input 
+                        type="date" 
+                        name="fecha1" 
+                        required
+                    >
+                    <input 
+                        type="hidden" 
+                        name="sesion1" 
+                        value="1"
+                    >
+
+                    <div class="form__cta__agendar">
+
+                        <button 
+                            class="cta__send"
+                            type="submit" 
+                            name="enviar"
+                        >
+                            Agendar
+                        </button>
                     </div>
+
                 </form>
+
             
             </div>
             
@@ -376,12 +413,13 @@
             
                 <h4>Dos sesiones</h4>
             
-                <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
+                <p>
+                    A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales
+                </p>
             
                 <ul>
                     <li>
                         <b>Mocap:</b> miercoles de 8:00 a 1:00pm <br>
-
                     </li>
                     <li>
                         <b>Croma o stop motion:</b> martes y jueves de 11:00 am a 5:00 pm <br>
@@ -392,14 +430,41 @@
                 </ul>
                 <form method="POST" class="form__input__">
 
-                    <input type="hidden" name="sesion1" value="2">
-                    <span>Primera fecha de la actividad</span>
-                    <input type="date" name="fecha1" required>
-                    <span>Segunda fecha de la actividad</span>
-                    <input type="date" name="fecha2" required>
+                    <input 
+                        type="hidden" 
+                        name="sesion1" 
+                        value="2"
+                    >
+
+                    <p>
+                        Primera fecha de la actividad
+                    </p>
+
+                    <input 
+                        type="date" 
+                        name="fecha1" 
+                        required
+                    >
+
+                    <p>
+                        Segunda fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha2" 
+                        required
+                    >
             
-                    <div class="btn" style="margin-top:5%;">
-                        <button type="submit" name="enviar2">Agendar</button>
+                    <div class="form__cta__agendar">
+
+                        <button 
+                            class="cta__send" 
+                            type="submit" 
+                            name="enviar2"
+                        >
+                            Agendar
+                        </button>
+
                     </div>
                 </form>
             
@@ -407,116 +472,318 @@
             
             <div id="sesion3" class="form__input__radio">
                 <h4>Tres sesiones</h4>
-                <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-                <p>Mocap: miercoles de 8:00 a 1:00pm
-                    Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm
-                    Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+
+                <p>
+                    A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales
                 </p>
-                <form method="POST">
-                    <input type="hidden" name="sesion1" value="3">
-                    <h5>5. Primera fecha de la actividad</h5>
-                    <input type="date" name="fecha1" required>
-                    <h5>6. segunda fecha de la actividad</h5>
-                    <input type="date" name="fecha2" required>
-                    <h5>7. Tercera fecha de la actividad</h5>
-                    <input type="date" name="fecha3" required>
+
+                <ul>
+                    <li>
+                        <b>Mocap:</b> miercoles de 8:00 a 1:00pm <br>
+                    </li>
+                    <li>
+                        <b>Croma o stop motion:</b> martes y jueves de 11:00 am a 5:00 pm <br>
+                    </li>
+                    <li>
+                        <b>Fotogrametria:</b> viernes de 8:00 am. a 1:00 pm. <br>
+                    </li>
+                </ul>
+
+                <form method="POST" class="form__input__">
+
+                    <input 
+                        type="hidden" 
+                        name="sesion1" 
+                        value="3"
+                    >
+                    <p>
+                        Primera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha1" 
+                        required
+                    >
+                    <p>
+                        Segunda fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha2" 
+                        required
+                    >
+                    <p>
+                        Tercera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha3" 
+                        required
+                    >
             
-                    <div class="btn" style="margin-top:5%;">
-                        <button type="submit" name="enviar3">Agendar</button>
+                    <div class="form__cta__agendar">
+
+                        <button 
+                            class="cta__send" 
+                            type="submit" 
+                            name="enviar3"
+                        >
+                            Agendar
+                        </button>
                     </div>
                 </form>
             </div>
             
             <div id="sesion4" class="form__input__radio">
-                <h4>Cuatro sesiones</h4>
-                <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-            
-                <p>Mocap: miercoles de 8:00 a 1:00pm
-                    Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm
-                    Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                <h4>
+                    Cuatro sesiones
+                </h4>
+                <p>
+                    A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales
                 </p>
-                <form method="POST">
-                    <input type="hidden" name="sesion1" value="4">
-                    <h5>8. Primera fecha de la actividad</h5>
-                    <input type="date" name="fecha1" required>
-                    <h5>9. segunda fecha de la actividad</h5>
-                    <input type="date" name="fecha2" required>
-                    <h5>10. Tercera fecha de la actividad</h5>
-                    <input type="date" name="fecha3" required>
-                    <h5>11. Cuarta fecha de la actividad</h5>
-                    <input type="date" name="fecha4" required>
             
-                    <div class="btn" style="margin-top:5%;">
-                        <button type="submit" name="enviar4">Agendar</button>
+                <ul>
+                    <li>
+                        <b>Mocap:</b> miercoles de 8:00 a 1:00pm
+                    </li>
+                    <li>
+                        <b>Croma o stop motion:</b> martes y jueves de 11:00 am a 5:00 pm
+                    </li>
+                    <li>
+                        <b>Fotogrametria:</b> viernes de 8:00 am. a 1:00 pm.
+                    </li>
+                </ul>
+                <form method="POST" class="form__input__">
+
+                    <input 
+                        type="hidden" 
+                        name="sesion1" 
+                        value="4"
+                    >
+                    <p>
+                        Primera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha1" 
+                        required
+                    >
+
+                    <p>
+                        segunda fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha2" 
+                        required
+                    >
+
+                    <p>
+                        Tercera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha3" 
+                        required
+                    >
+
+                    <p>
+                        Cuarta fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha4" 
+                        required
+                    >
+            
+                    <div class="form__cta__agendar">
+                        <button class="cta__send" type="submit" name="enviar4">Agendar</button>
                     </div>
                 </form>
             </div>
             
             <div id="sesion5" class="form__input__radio">
+
                 <h4>Cinco sesiones</h4>
-                <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-            
-                <p>Mocap: miercoles de 8:00 a 1:00pm
-                    Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm
-                    Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+
+                <p>
+                    A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales
                 </p>
-                <form method="POST">
-                    <input type="hidden" name="sesion1" value="5">
-                    <h5>12. Primera fecha de la actividad</h5>
-                    <input type="date" name="fecha1" required>
-                    <h5>13. segunda fecha de la actividad</h5>
-                    <input type="date" name="fecha2" required>
-                    <h5>14. Tercera fecha de la actividad</h5>
-                    <input type="date" name="fecha3" required>
-                    <h5>15. Cuarta fecha de la actividad</h5>
-                    <input type="date" name="fecha4" required>
-                    <h5>16. Quinta fecha de la actividad</h5>
-                    <input type="date" name="fecha5" required>
-                    <div class="btn" style="margin-top:5%;">
-                        <button type="submit" name="enviar5">Agendar</button>
+            
+                <ul>
+                    <li>
+                        <b>Mocap:</b> miercoles de 8:00 a 1:00pm
+                    </li>
+                    <li>
+                        <b>Croma o stop motion:</b> martes y jueves de 11:00 am a 5:00 pm
+                    </li>
+                    <li>
+                        <b>Fotogrametria:</b> viernes de 8:00 am. a 1:00 pm.
+                    </li>
+                </ul>
+                <form method="POST" class="form__input__">
+
+                    <input 
+                        type="hidden" 
+                        name="sesion1" 
+                        value="5"
+                    >
+
+                    <p>
+                        Primera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha1" 
+                        required
+                    >
+
+                    <p>
+                        Segunda fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha2" 
+                        required
+                    >
+
+                    <p>
+                        Tercera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha3" 
+                        required
+                    >
+                    <p>
+                        Cuarta fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha4" 
+                        required
+                    >
+
+                    <p>
+                        Quinta fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha5" 
+                        required
+                    >
+
+                    <div class="form__cta__agendar">
+                        <button 
+                            class="cta__send" 
+                            type="submit" 
+                            name="enviar5"
+                        >
+                        Agendar
+                        </button>
                     </div>
             
                 </form>
             </div>
             
             <div id="sesion6" class="form__input__radio">
-                <h4>Seis sesiones</h4>
+
+                <h4>
+                    Seis sesiones
+                </h4>
             
-                <p>A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales</p>
-            
-                <p>Mocap: miercoles de 8:00 a 1:00pm
-                    Croma o stop motion: martes y jueves de 11:00 am a 5:00 pm
-                    Fotogrametria: viernes de 8:00 am. a 1:00 pm.
+                <p>
+                    A continuacion se mencionan las actividades las actividades que ofrece Contenidos Digitales
                 </p>
-                <form method="POST">
-                    <input type="hidden" name="sesion1" value="6">
-                    <h5>17. Primera fecha de la actividad</h5>
-                    <input type="date" name="fecha1" required>
-                    <h5>18. segunda fecha de la actividad</h5>
-                    <input type="date" name="fecha2" required>
-                    <h5>19. Tercera fecha de la actividad</h5>
-                    <input type="date" name="fecha3" required>
-                    <h5>20. Cuarta fecha de la actividad</h5>
-                    <input type="date" name="fecha4" required>
-                    <h5>21. Quinta fecha de la actividad</h5>
-                    <input type="date" name="fecha5" required>
-                    <h5>22. Sexta fecha de la actividad</h5>
-                    <input type="date" name="fecha6" required>
             
-                    <button type="submit" name="enviar6">Agendar</button>
-            
+                <ul>
+                    <li>
+                        <b>Mocap:</b> miercoles de 8:00 a 1:00pm
+                    </li>
+                    <li>
+                        <b>Croma o stop motion:</b> martes y jueves de 11:00 am a 5:00 pm
+                    </li>
+                    <li>
+                        <b>Fotogrametria:</b> viernes de 8:00 am. a 1:00 pm.
+                    </li>
+                </ul>
+                <form method="POST" class="form__input__">
+
+                    <input 
+                        type="hidden" 
+                        name="sesion1" 
+                        value="6"
+                    >
+
+                    <p>
+                        Primera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha1"
+                        required
+                    >
+
+                    <p>
+                        Segunda fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha2" 
+                        required
+                    >
+
+                    <p>
+                        Tercera fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha3" 
+                        required
+                    >
+
+                    <p>
+                        Cuarta fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha4" 
+                        required
+                    >
+
+                    <p>
+                        Quinta fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha5" 
+                        required
+                    >
+
+                    <p>
+                        Sexta fecha de la actividad
+                    </p>
+                    <input 
+                        type="date" 
+                        name="fecha6" 
+                        required
+                    >
+                    <div class="form__cta__agendar">
+
+                        <button 
+                        class="cta__send"
+                        type="submit" 
+                        name="enviar6"
+                        >
+                            Agendar
+                        </button>
+
+                    </div>
                 </form>
             </div>
 
             </div>
 
-            <div class="form__cta">
-                <a class="cta__back" href="../../../../encuesta/">
-                    Regresar
-                    <!-- Enviar -->
-            
-                </a>
-            </div>
         </div>
     </div>
     
